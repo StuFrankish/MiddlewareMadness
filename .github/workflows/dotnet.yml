@@ -21,10 +21,10 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Change to project directory
-      run: cd MiddlewareMadness/ApiMiddleware
+      run: cd ApiMiddleware
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build MiddlewareMadness
+    - name: Build *.sln
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
