@@ -24,7 +24,7 @@ jobs:
       run: cd ApiMiddleware
     - name: Restore dependencies
       run: dotnet restore
-    - name: Build *.sln
+    - name: Build ApiMiddleware.sln
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
