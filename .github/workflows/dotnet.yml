@@ -23,6 +23,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build MiddlewareMadness
-      run: dotnet build MiddlewareMadness/ApiMiddleware/ApiMiddleware.csproj --no-restore
+      run: dotnet build ./ApiMiddleware/ApiMiddleware.csproj --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
