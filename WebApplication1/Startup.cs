@@ -20,6 +20,7 @@ public class Startup(IConfiguration configuration, IWebHostEnvironment hostEnvir
             opt.StringSomething = "hello";
 
             opt.Endpoints.EnableInfoEndpoint = true;
+            opt.Endpoints.EnableUIEndpoint = true;
 
         });
     }
