@@ -19,3 +19,7 @@ The Web Application is just a testing ground to test and use my middleware, so y
 - [ ] Endpoint for returning UI framework
 - [ ] Endpoint to return static content (like Javascript & images)
 - [ ] Enhance endpoints with authentication
+
+## Housekeeping
+- [ ] Re-organise project based on Clean Architecture principles
+- [ ] Add Unit tests!
