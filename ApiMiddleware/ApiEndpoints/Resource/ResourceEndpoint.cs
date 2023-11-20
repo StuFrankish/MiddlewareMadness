@@ -25,9 +25,15 @@ public class ResourceEndpoint(IResourceEndpointResponseGenerator responseGenerat
 
     private async Task<IApiEndpointResult> ProcessInfoRequestAsync(HttpContext context)
     {
-        var optionValue = _options.IntSomething;
+        var fileName = context.Request.Query[key: "r"];
+        var response = await _responseGenerator.ProcessAsync(fileName);
 
-        var response = await _responseGenerator.ProcessAsync(fileName: context.Request.Query["r"]);
+        if (response == null)
+        {
+            _logger.LogError(message: $"Resource {fileName} could not be found.");
+            return new StatusCodeResult(HttpStatusCode.NotFound);
+        }
+
         return new ResourceResult(response);
     }
 }
