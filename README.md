@@ -13,6 +13,9 @@ Some of the things I'm exploring and using are;
 The Web Application is just a testing ground to test and use my middleware, so you'll find it boring with a side of bland, everything happens in the ApiMiddleware project.
 
 ## To Do
-- [x] Endpoint for returning data
-- [ ] Endpoint for returning UI (Html content)
+- [x] Integrate Serilog
+- [x] Endpoint routing (check if the url path relates to a known endpoint, find a handler and handle it)
+- [x] Endpoint for returning data (Json data for the UI)
+- [ ] Endpoint for returning UI framework
 - [ ] Endpoint to return static content (like Javascript & images)
+- [ ] Enhance endpoints with authentication
