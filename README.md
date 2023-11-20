@@ -8,3 +8,5 @@ Some of the things I'm exploring and using are;
 - Embedding a UI framework
 
 The Web Application is just a testing ground to test and use my middleware, so you'll find it boring with a side of bland, everything happens in the ApiMiddleware project.
+
+[![.NET Build](https://github.com/StuFrankish/MiddlewareMadness/actions/workflows/dotnet.yml/badge.svg)](https://github.com/StuFrankish/MiddlewareMadness/actions/workflows/dotnet.yml)
