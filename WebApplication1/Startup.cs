@@ -1,5 +1,4 @@
-﻿using ApiMiddleware;
-using ApiMiddleware.Extensions;
+﻿using ApiMiddleware.Extensions;
 
 namespace WebApplication1;
 
@@ -16,19 +15,15 @@ public class Startup(IConfiguration configuration, IWebHostEnvironment hostEnvir
 
         services.AddMyMiddleware(opt => {
 
-            opt.IntSomething = 500;
-            opt.StringSomething = "hello";
-
             opt.Endpoints.EnableInfoEndpoint = true;
             opt.Endpoints.EnableUIEndpoint = true;
+            opt.Endpoints.EnableResourceEndpoint = true;
 
         });
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
     {
-        app.UseMyMiddleware();
-
         app.UseStaticFiles();
         app.UseRouting();
 
@@ -37,5 +32,7 @@ public class Startup(IConfiguration configuration, IWebHostEnvironment hostEnvir
             endpoints.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
             endpoints.MapControllerRoute(name: "file", pattern: "{controller=Home}/{action=Index}/{id?}/{fileName}");
         });
+
+        app.UseMyMiddleware();
     }
 }

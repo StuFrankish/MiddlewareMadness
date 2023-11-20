@@ -1,5 +1,4 @@
 ﻿using ApiMiddleware.ApiEndpoints;
-using ApiMiddleware.ApiEndpoints.Info;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
 
@@ -24,6 +23,10 @@ public class MyMiddleware(RequestDelegate next, ILogger<MyMiddleware> logger)
                 }
 
                 return;
+            }
+            else
+            {
+                _logger.LogTrace(message: $"Endpoint not found for {context.Request.Path}");
             }
         }
         catch (Exception ex)
