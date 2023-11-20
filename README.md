@@ -1,4 +1,7 @@
 # MiddlewareMadness
+
+[![.NET Build](https://github.com/StuFrankish/MiddlewareMadness/actions/workflows/dotnet.yml/badge.svg)](https://github.com/StuFrankish/MiddlewareMadness/actions/workflows/dotnet.yml)
+
 The goal is to learn about writting good quality middleware, while making use of some of the official .Net 8 (LTS) goodness released very recently.
 My secondary goal is to take what I learn here and build a more complete solution based around a fictious accounting application.
 
@@ -9,4 +12,7 @@ Some of the things I'm exploring and using are;
 
 The Web Application is just a testing ground to test and use my middleware, so you'll find it boring with a side of bland, everything happens in the ApiMiddleware project.
 
-[![.NET Build](https://github.com/StuFrankish/MiddlewareMadness/actions/workflows/dotnet.yml/badge.svg)](https://github.com/StuFrankish/MiddlewareMadness/actions/workflows/dotnet.yml)
+## To Do
+- [x] Endpoint for returning data
+- [ ] Endpoint for returning UI (Html content)
+- [ ] Endpoint to return static content (like Javascript & images)
