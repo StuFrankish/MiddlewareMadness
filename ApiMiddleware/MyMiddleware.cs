@@ -5,7 +5,7 @@ using Microsoft.Extensions.Logging;
 
 namespace ApiMiddleware;
 
-public class MyMiddleware(RequestDelegate next, ILogger<InfoEndpointResponseGenerator> logger)
+public class MyMiddleware(RequestDelegate next, ILogger<MyMiddleware> logger)
 {
     private readonly RequestDelegate _next = next;
     private readonly ILogger _logger = logger;
