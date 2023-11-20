@@ -9,6 +9,7 @@ public static class EndpointOptionsExtensions
     {
         MyMiddlewareConstants.EndpointNames.Info => options.EnableInfoEndpoint,
         MyMiddlewareConstants.EndpointNames.UI => options.EnableUIEndpoint,
+        MyMiddlewareConstants.EndpointNames.Resource => options.EnableResourceEndpoint,
         _ => false
     };
 }

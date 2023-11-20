@@ -50,6 +50,7 @@ public static class MyMiddlewareExtensions
 
         builder.AddEndpoint<InfoEndpoint>(EndpointNames.Info, EndpointPaths.Info.EnsureLeadingSlash());
         builder.AddEndpoint<UIEndpoint>(EndpointNames.UI, EndpointPaths.UI.EnsureLeadingSlash());
+        builder.AddEndpoint<ResourceEndpoint>(EndpointNames.Resource, EndpointPaths.Resource.EnsureLeadingSlash());
 
         return builder;
     }
@@ -58,6 +59,7 @@ public static class MyMiddlewareExtensions
     {
         builder.Services.TryAddTransient<IInfoEndpointResponseGenerator, InfoEndpointResponseGenerator>();
         builder.Services.TryAddTransient<IUIEndpointResponseGenerator, UIEndpointResponseGenerator>();
+        builder.Services.TryAddTransient<IResourceEndpointResponseGenerator, ResourceEndpointResponseGenerator>();
 
         return builder;
     }
