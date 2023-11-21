@@ -1,5 +1,7 @@
 ﻿using HtmlAgilityPack;
 using Microsoft.Extensions.Logging;
+using System.Reflection;
+using System.Resources;
 
 namespace ApiMiddleware.ApiEndpoints.Info;
 
@@ -9,27 +11,17 @@ public class UIEndpointResponseGenerator(ILogger<InfoEndpointResponseGenerator> 
 
     public virtual async Task<string> ProcessAsync()
     {
-        _logger.LogInformation("This is some information being logged :)");
+        _logger.LogInformation(message: "Running the middleware homepage");
 
         var doc = new HtmlDocument();
 
-        using (HttpClient client = new HttpClient())
-        {
-            try
-            {
-                string Url = "https://www.example.com/";
-                HttpResponseMessage response = await client.GetAsync(Url);
+        var assembly = Assembly.GetExecutingAssembly();
+        
+        var rm = new ResourceManager(baseName: Constants.MyMiddlewareConstants.ResourceFileNames.ResourceFileBaseName, assembly);
+        var contentString = rm.GetString(name: "index");
 
-                response.EnsureSuccessStatusCode();
+        doc.LoadHtml(contentString);
 
-                string htmlContent = await response.Content.ReadAsStringAsync();
-                doc.LoadHtml(htmlContent);
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
 
         return doc.DocumentNode.OuterHtml;
     }

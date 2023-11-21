@@ -10,7 +10,7 @@ public class ResourceEndpointResponseGenerator(ILogger<ResourceEndpointResponseG
 
     public virtual async Task<byte[]> ProcessAsync(string fileName)
     {
-        _logger.LogInformation(message: "This is some information being logged :)");
+        _logger.LogTrace(message: $"Getting file content for {fileName}");
 
         var assembly = Assembly.GetExecutingAssembly();
 

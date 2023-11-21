@@ -69,5 +69,29 @@ namespace ApiMiddleware {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;html&gt;&lt;head&gt;
+        ///    &lt;title&gt;Middleware Homepage&lt;/title&gt;
+        ///
+        ///    &lt;meta charset=&quot;utf-8&quot;&gt;
+        ///    &lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+        ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+        ///    &lt;style type=&quot;text/css&quot;&gt;
+        ///    body {
+        ///        background-color: #f0f0f2;
+        ///        margin: 0;
+        ///        padding: 0;
+        ///        font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
+        ///        
+        ///    }
+        ///    div {
+        ///        w [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string index {
+            get {
+                return ResourceManager.GetString("index", resourceCulture);
+            }
+        }
     }
 }
