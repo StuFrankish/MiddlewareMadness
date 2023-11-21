@@ -4,9 +4,9 @@ using Microsoft.Extensions.Options;
 
 namespace ApiMiddleware.Routing;
 
-public class ApiEndpointRouter(IEnumerable<ApiEndpoints.ApiEndpoint> endPoints, IOptions<MyMiddlewareOptions> options) : IApiEndpointRouter
+public class ApiEndpointRouter(IEnumerable<ApiEndpoint> endPoints, IOptions<MyMiddlewareOptions> options) : IApiEndpointRouter
 {
-    private readonly IEnumerable<ApiEndpoints.ApiEndpoint> _endpoints = endPoints;
+    private readonly IEnumerable<ApiEndpoint> _endpoints = endPoints;
     private readonly MyMiddlewareOptions _options = options.Value;
 
     public IApiEndpointHandler? Find(HttpContext context)
@@ -25,7 +25,7 @@ public class ApiEndpointRouter(IEnumerable<ApiEndpoints.ApiEndpoint> endPoints, 
         return null;
     }
 
-    private IApiEndpointHandler? GetEndpointHandler(ApiEndpoints.ApiEndpoint endpoint, HttpContext context)
+    private IApiEndpointHandler? GetEndpointHandler(ApiEndpoint endpoint, HttpContext context)
     {
         if (_options.Endpoints.IsEndpointEnabled(endpoint) && context.RequestServices.GetService(endpoint.Handler) is IApiEndpointHandler handler)
         {

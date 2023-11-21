@@ -11,7 +11,7 @@ public class InfoEndpoint(IInfoEndpointResponseGenerator responseGenerator, IOpt
     private readonly MyMiddlewareOptions _options = myMiddlewareOptions.Value;
     private readonly ILogger<InfoEndpoint> _logger = logger;
 
-    public async Task<IApiEndpointResult> ProcessAsync(HttpContext context)
+    public async Task<IApiEndpointResult?> ProcessAsync(HttpContext context)
     {
         if (!HttpMethods.IsGet(context.Request.Method) && !HttpMethods.IsPost(context.Request.Method))
         {
@@ -19,7 +19,7 @@ public class InfoEndpoint(IInfoEndpointResponseGenerator responseGenerator, IOpt
             return new StatusCodeResult(HttpStatusCode.MethodNotAllowed);
         }
 
-        _logger.LogInformation(message: "Beggining response processing...");
+        _logger.LogInformation(message: "Beginning response processing...");
         return await ProcessInfoRequestAsync(context);
     }
 

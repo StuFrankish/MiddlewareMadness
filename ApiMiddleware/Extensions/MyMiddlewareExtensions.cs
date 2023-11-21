@@ -30,7 +30,6 @@ public static class MyMiddlewareExtensions
             loggingBuilder.AddSerilog());
 
         builder
-            .AddBaseServices()
             .AddEndpoints()
             .AddResponseGenerators();
 
@@ -60,13 +59,6 @@ public static class MyMiddlewareExtensions
         builder.Services.TryAddTransient<IInfoEndpointResponseGenerator, InfoEndpointResponseGenerator>();
         builder.Services.TryAddTransient<IUIEndpointResponseGenerator, UIEndpointResponseGenerator>();
         builder.Services.TryAddTransient<IResourceEndpointResponseGenerator, ResourceEndpointResponseGenerator>();
-
-        return builder;
-    }
-
-    public static IMyMiddlewareBuilder AddBaseServices(this IMyMiddlewareBuilder builder)
-    {
-        builder.Services.AddTransient<IServerUrls, ServerUrls>();
 
         return builder;
     }

@@ -1,8 +1,7 @@
-﻿using ApiMiddleware.ApiEndpoints;
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using System.Net;
 
-namespace ApiMiddleware;
+namespace ApiMiddleware.ApiEndpoints;
 
 public class StatusCodeResult(HttpStatusCode statusCode) : IApiEndpointResult
 {

@@ -7,11 +7,6 @@ public static class StringExtensions
     [DebuggerStepThrough]
     public static string? EnsureLeadingSlash(this string url)
     {
-        if (!String.IsNullOrWhiteSpace(url) && !url.StartsWith(value: '/'))
-        {
-            return "/" + url;
-        }
-
-        return url;
+        return !string.IsNullOrWhiteSpace(url) && !url.StartsWith(value: '/') ? $"/{url}" : url;
     }
 }

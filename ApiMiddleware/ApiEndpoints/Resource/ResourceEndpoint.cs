@@ -11,22 +11,22 @@ public class ResourceEndpoint(IResourceEndpointResponseGenerator responseGenerat
     private readonly MyMiddlewareOptions _options = myMiddlewareOptions.Value;
     private readonly ILogger<ResourceEndpoint> _logger = logger;
 
-    public async Task<IApiEndpointResult> ProcessAsync(HttpContext context)
+    public async Task<IApiEndpointResult?> ProcessAsync(HttpContext context)
     {
-        if (!HttpMethods.IsGet(context.Request.Method) && !HttpMethods.IsPost(context.Request.Method))
+        if (!HttpMethods.IsGet(context.Request.Method))
         {
             _logger.LogError(message: "Wrong HTTP method used.");
             return new StatusCodeResult(HttpStatusCode.MethodNotAllowed);
         }
 
-        _logger.LogInformation(message: "Beggining response processing...");
+        _logger.LogInformation(message: "Beginning response processing...");
         return await ProcessInfoRequestAsync(context);
     }
 
     private async Task<IApiEndpointResult> ProcessInfoRequestAsync(HttpContext context)
     {
         var fileName = context.Request.Query[key: "r"];
-        var response = await _responseGenerator.ProcessAsync(fileName);
+        var response = await _responseGenerator.ProcessAsync(fileName!);
 
         if (response == null)
         {
