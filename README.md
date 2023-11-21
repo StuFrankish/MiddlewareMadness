@@ -28,8 +28,9 @@ The Web Application is just a testing ground to test and use my middleware, so y
 ## 21/11/2023
 - The rough capability to return an HTML document with the required script appended to it using HtmlAgilityPack.
 - Put together a fairly simple page that executes a fetch request against the existing sample data endpoint and displays the result on page.
+- Added a "Get Data" button just to demo the data fetching.
 
 What I think I may do from here is to continue embedding the pages required resources at the point it's called by the `/api/ui` endpoint.
 Images can be left to the `/api/resource` endpoint, though I may break these out into specific concerns depending on how I get along with general content.
 
-![image](https://github.com/StuFrankish/MiddlewareMadness/assets/5624629/ea321fff-a170-43a0-affa-fa67b518b438)
+![image](https://github.com/StuFrankish/MiddlewareMadness/assets/5624629/89bcfb31-fd3b-4681-a48c-5a5bc5e19eac)
