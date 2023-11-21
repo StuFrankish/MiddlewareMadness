@@ -99,15 +99,14 @@ namespace ApiMiddleware {
         ///// Replace &apos;your-api-endpoint&apos; with the actual API endpoint URL
         ///const apiUrl = &apos;/api/info&apos;;
         ///
-        ///// Make a GET request to the API endpoint
-        ///fetch(apiUrl)
-        ///    .then(response =&gt; {
-        ///        // Check if the request was successful (status code 200)
-        ///        if (!response.ok) {
-        ///            throw new Error(`HTTP error! Status: ${response.status}`);
-        ///        }
-        ///        // Parse the JSON response
-        ///        r [rest of string was truncated]&quot;;.
+        ///// Function to make a GET request and update content
+        ///function fetchData() {
+        ///    // Make a GET request to the API endpoint
+        ///    fetch(apiUrl)
+        ///        .then(response =&gt; {
+        ///            // Check if the request was successful (status code 200)
+        ///            if (!response.ok) {
+        ///                throw new Erro [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string mainjs {
             get {
