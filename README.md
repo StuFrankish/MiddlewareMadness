@@ -24,3 +24,12 @@ The Web Application is just a testing ground to test and use my middleware, so y
 ## Housekeeping
 - [ ] Re-organise project based on Clean Architecture principles
 
+# Milestones
+## 21/11/2023
+- The rough capability to return an HTML document with the required script appended to it using HtmlAgilityPack.
+- Put together a fairly simple page that executes a fetch request against the existing sample data endpoint and displays the result on page.
+
+What I think I may do from here is to continue embedding the pages required resources at the point it's called by the `/api/ui` endpoint.
+Images can be left to the `/api/resource` endpoint, though I may break these out into specific concerns depending on how I get along with general content.
+
+![image](https://github.com/StuFrankish/MiddlewareMadness/assets/5624629/ea321fff-a170-43a0-affa-fa67b518b438)
