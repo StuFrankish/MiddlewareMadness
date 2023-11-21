@@ -71,26 +71,47 @@ namespace ApiMiddleware {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;html&gt;&lt;head&gt;
+        ///   Looks up a localized string similar to &lt;html&gt;
+        ///&lt;head&gt;
         ///    &lt;title&gt;Middleware Homepage&lt;/title&gt;
         ///
         ///    &lt;meta charset=&quot;utf-8&quot;&gt;
         ///    &lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
         ///    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
+        ///
         ///    &lt;style type=&quot;text/css&quot;&gt;
-        ///    body {
-        ///        background-color: #f0f0f2;
-        ///        margin: 0;
-        ///        padding: 0;
-        ///        font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;
-        ///        
-        ///    }
-        ///    div {
-        ///        w [rest of string was truncated]&quot;;.
+        ///        body {
+        ///            background-color: #f0f0f2;
+        ///            margin: 0;
+        ///            padding: 0;
+        ///            font-family: -apple-system, system-ui, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;Open Sans&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string index {
             get {
                 return ResourceManager.GetString("index", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to // Get a reference to the div with id &quot;jscontent&quot;
+        ///const jscontent = document.getElementById(&apos;jscontent&apos;);
+        ///
+        ///// Replace &apos;your-api-endpoint&apos; with the actual API endpoint URL
+        ///const apiUrl = &apos;/api/info&apos;;
+        ///
+        ///// Make a GET request to the API endpoint
+        ///fetch(apiUrl)
+        ///    .then(response =&gt; {
+        ///        // Check if the request was successful (status code 200)
+        ///        if (!response.ok) {
+        ///            throw new Error(`HTTP error! Status: ${response.status}`);
+        ///        }
+        ///        // Parse the JSON response
+        ///        r [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string mainjs {
+            get {
+                return ResourceManager.GetString("mainjs", resourceCulture);
             }
         }
     }

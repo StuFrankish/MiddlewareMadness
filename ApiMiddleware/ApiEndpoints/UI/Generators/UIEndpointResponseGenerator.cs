@@ -13,16 +13,22 @@ public class UIEndpointResponseGenerator(ILogger<InfoEndpointResponseGenerator> 
     {
         _logger.LogInformation(message: "Running the middleware homepage");
 
+        var assembly = Assembly.GetExecutingAssembly();
+        var rm = new ResourceManager(baseName: Constants.MyMiddlewareConstants.ResourceFileNames.ResourceFileBaseName, assembly);
+
         var doc = new HtmlDocument();
 
-        var assembly = Assembly.GetExecutingAssembly();
-        
-        var rm = new ResourceManager(baseName: Constants.MyMiddlewareConstants.ResourceFileNames.ResourceFileBaseName, assembly);
-        var contentString = rm.GetString(name: "index");
+        // Load the main HTML document
+        doc.LoadHtml(rm.GetString(name: "index"));
 
-        doc.LoadHtml(contentString);
+        // Add the script content
+        var scriptElement = doc.CreateElement(name: "script");
+        scriptElement.InnerHtml = rm.GetString(name: "mainjs");
 
+        var bodyElement = doc.DocumentNode.SelectSingleNode(xpath: "//body");
+        bodyElement.AppendChild(scriptElement);
 
+        // Return the document
         return doc.DocumentNode.OuterHtml;
     }
 }
