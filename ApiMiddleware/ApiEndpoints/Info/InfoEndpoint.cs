@@ -13,7 +13,7 @@ public class InfoEndpoint(IInfoEndpointResponseGenerator responseGenerator, IOpt
 
     public async Task<IApiEndpointResult?> ProcessAsync(HttpContext context)
     {
-        if (!HttpMethods.IsGet(context.Request.Method) && !HttpMethods.IsPost(context.Request.Method))
+        if (!HttpMethods.IsGet(context.Request.Method))
         {
             _logger.LogError(message: "Wrong HTTP method used.");
             return new StatusCodeResult(HttpStatusCode.MethodNotAllowed);

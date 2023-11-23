@@ -12,6 +12,6 @@ internal class ResourceResult(byte[] data) : IApiEndpointResult
         context.Response.SetNoCache();
         context.Response.ContentType = "image/png";
 
-        await context.Response.Body.WriteAsync(Data, offset: 0, Data.Length);
+        await context.Response.Body.WriteAsync(Data);
     }
 }

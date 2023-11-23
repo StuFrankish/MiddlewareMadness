@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-
-namespace ApiMiddleware.ApiEndpoints.Info;
+﻿namespace ApiMiddleware.ApiEndpoints.Info;
 
 public interface IUIEndpointResponseGenerator
 {

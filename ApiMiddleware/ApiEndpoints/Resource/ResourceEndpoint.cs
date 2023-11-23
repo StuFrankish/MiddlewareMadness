@@ -19,7 +19,6 @@ public class ResourceEndpoint(IResourceEndpointResponseGenerator responseGenerat
             return new StatusCodeResult(HttpStatusCode.MethodNotAllowed);
         }
 
-        _logger.LogInformation(message: "Beginning response processing...");
         return await ProcessInfoRequestAsync(context);
     }
 
