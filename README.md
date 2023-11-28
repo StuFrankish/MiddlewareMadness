@@ -1,6 +1,7 @@
 # MiddlewareMadness
 
 [![.NET Build](https://github.com/StuFrankish/MiddlewareMadness/actions/workflows/dotnet.yml/badge.svg)](https://github.com/StuFrankish/MiddlewareMadness/actions/workflows/dotnet.yml)
+[![CodeQL](https://github.com/StuFrankish/MiddlewareMadness/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/StuFrankish/MiddlewareMadness/actions/workflows/github-code-scanning/codeql)
 
 The goal is to learn about writting good quality middleware, while making use of some of the official .Net 8 (LTS) goodness released very recently.
 My secondary goal is to take what I learn here and build a more complete solution based around a fictious accounting application.
